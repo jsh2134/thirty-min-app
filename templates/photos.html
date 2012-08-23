@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <link rel='stylesheet' href="static/css/bootstrap.css">
+  </head>
+
+  <body>
+    <h1>WOW! Look at everyone's "{{query}}" Photos</h1>
+    {% for post in fb_posts['data'] %}
+      {% if 'picture' in post %}
+        <img src='{{ post.picture }}' height=100px>
+      {% endif %}
+    {% endfor %}
+
+  </body>
+</html>
