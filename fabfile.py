@@ -67,7 +67,7 @@ def install_web():
 	sudo(""" echo '%s' >> .ssh/known_hosts """ % github_fingerprint , pty=True)
 	put("ssh-config", ".ssh/config", mode=0600)
 	put('keys/deploy_key.pub', '.ssh/')
-	put('keys/deploy_key', '.ssh/id_rsa', mode=0600)
+	put('keys/deploy_key', '.ssh/', mode=0600)
 	sudo('git clone %s %s' % (settings.REPO_URL, remote_code_dir) )
 
 	# Start Application
