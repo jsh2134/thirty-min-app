@@ -55,7 +55,7 @@ def install_web():
 	sudo('cd pip-1.0 && python setup.py install')
 	
 	# start nginx
-	put('nginx.conf', '/etc/nginx/')
+	put('nginx.conf', '/etc/nginx/', use_sudo=True)
 	sudo('service nginx start')
 
 	# Install python requirements
