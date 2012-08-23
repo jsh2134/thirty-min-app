@@ -59,6 +59,8 @@ def install_web():
 	sudo('pip install -r %s/requirements.txt' % (remote_dir))
 	
 	# Checkout Code from GitHub
+	put('keys/deploy_key.pub', '.ssh/')
+	put('keys/deploy_key', '.ssh/id_rsa', mode=0600)
 	sudo('git clone %s %s' % (settings.REPO_URL, remote_code_dir) )
 
 	# Start Application
