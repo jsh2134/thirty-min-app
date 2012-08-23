@@ -9,7 +9,7 @@ except:
 
 
 # Here lie the settings
-REPO_URL = 'git@github.com:jsh2134/test-app.git'
+REPO_URL = 'git@github.com:jsh2134/thirty-min-app.git'
 
 # Here lie the secrets
 SECRETS = {

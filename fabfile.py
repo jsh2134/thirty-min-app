@@ -47,12 +47,16 @@ def install_web():
 	remote_code_dir = os.path.join(remote_dir, 'code')
 
 	# Install packages with yum
-	sudo('yum install -y git gcc')
+	sudo('yum install -y git gcc nginx')
 
 	# Install pip
 	sudo('curl -O http://pypi.python.org/packages/source/p/pip/pip-1.0.tar.gz')
 	run('tar xvfz pip-1.0.tar.gz')
 	sudo('cd pip-1.0 && python setup.py install')
+	
+	# start nginx
+	put('nginx.conf', '/etc/nginx/')
+	sudo('service nginx start')
 
 	# Install python requirements
 	put('requirements.txt', remote_dir)
