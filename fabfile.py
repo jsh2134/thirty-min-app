@@ -8,7 +8,7 @@ from fabric.exceptions import NetworkError
 import ec2
 import settings
 
-env.key_filename = settings.SECRETS['aws_key_pair']
+env.key_filename = settings.SECRETS['aws_rsa_key']
 
 def create_instance():
 	""" Just Creates an Instance """
@@ -89,5 +89,4 @@ def what_is_my_name():
 
 def what_is_sudos_name():
 	sudo('whoami')
-
 

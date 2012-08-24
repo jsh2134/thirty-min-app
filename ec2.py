@@ -3,14 +3,11 @@ from settings import SECRETS
 
 import time
 
-MAIN_SG = 'kp1'
-MAIN_KP = 'jeffec2'
-
 SERVER = {
 		'image_id' : 'ami-aecd60c7',
 		'instance_type' : 't1.micro',
-		'security_groups' : [MAIN_SG],
-		'key_name' : MAIN_KP,
+		'security_groups' : SECRETS['aws_security_groups'],
+		'key_name' : SECRETS['aws_key_pair'],
 }
 
 
