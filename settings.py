@@ -9,11 +9,10 @@ except:
 				 with your amazon secret variables!"""
 	sys.exit(1)
 
-
-# Here lie the settings
+# Github URL
 REPO_URL = 'git@github.com:%s/thirty-min-app.git' % github_user
 
-# Here lie the secrets
+# Here lie the Amazon secrets
 SECRETS = {
 			'aws_key' : aws_key,
 			'aws_secret': aws_secret,
