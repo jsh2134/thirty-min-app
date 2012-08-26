@@ -1,4 +1,4 @@
 Host github
-Hostname=github.com
-IdentityFile=~/.ssh/deploy_key
-User=git
+User git
+Hostname github.com
+IdentityFile /home/ec2-user/.ssh/deploy_key

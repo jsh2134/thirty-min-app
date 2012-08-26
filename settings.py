@@ -9,8 +9,8 @@ except:
 				 with your amazon secret variables!"""
 	sys.exit(1)
 
-# Github URL
-REPO_URL = 'git@github.com:%s/thirty-min-app.git' % github_user
+# Github Repo
+REPO = '%s/thirty-min-app.git' % github_user
 
 # Here lie the Amazon secrets
 AWS = {
