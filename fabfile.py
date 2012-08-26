@@ -8,12 +8,13 @@ from fabric.exceptions import NetworkError
 import ec2
 import settings
 
-env.key_filename = settings.SECRETS['aws_rsa_key']
+env.key_filename = settings.AWS['secrets']['aws_key_path']
+
 
 def create_instance():
-	""" Just Creates an Instance """
+	""" Just Creates an Amazon Instance """
 	instance = ec2.create_new_instance()
-
+	return instance
 
 def deploy_web():
 
@@ -75,9 +76,8 @@ def install_web():
 	sudo('python %s/app.py > /var/log/app_log.log &' % (remote_code_dir) )
 
 
-
-# Test Functions
-################
+# Simple Fab Functions
+##########################
 def host_type():
 	run('uname -a')
 

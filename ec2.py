@@ -1,13 +1,14 @@
 from boto.ec2.connection import EC2Connection
-from settings import SECRETS
+from settings import AWS
 
 import time
 
+
 SERVER = {
-		'image_id' : 'ami-aecd60c7',
-		'instance_type' : 't1.micro',
-		'security_groups' : SECRETS['aws_security_groups'],
-		'key_name' : SECRETS['aws_key_pair'],
+		'image_id' : AWS['defaults']['image_id'],
+		'instance_type' : AWS['defaults']['instance_type'],
+		'security_groups' : AWS['defaults']['security_groups'],
+		'key_name' : AWS['defaults']['key_name'],
 }
 
 
@@ -18,8 +19,8 @@ class EC2Conn:
 
 
 	def connect(self):
-		self.conn = EC2Connection(SECRETS['aws_key'],
-								  SECRETS['aws_secret'])
+		self.conn = EC2Connection(AWS['secrets']['aws_key'],
+								  AWS['secrets']['aws_secret'])
 
 	def create_instance(self):
 		reservation = self.conn.run_instances( **SERVER)
