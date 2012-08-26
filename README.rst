@@ -7,10 +7,14 @@ Build and Deploy a Python Web App to Amazon in 30 minutes
 Setup
 ================================
 
-Install Fabric, Flask and Boto
+Install Pip, Fabric, Flask and Boto
 ---------------------------------
 
 ::
+
+         $ curl -O http://pypi.python.org/packages/source/p/pip/pip-1.0.tar.gz
+	 $ tar xvfz pip-1.0.tar.gz
+	 $ cd pip-1.0 && python setup.py install
 
 	 $ pip install fabric flask boto
 
