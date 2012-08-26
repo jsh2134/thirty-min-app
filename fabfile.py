@@ -72,7 +72,7 @@ def install_web():
 	run('git clone github:%s %s' % (settings.REPO, remote_code_dir) )
 
 	# Start Application
-	sudo('nohup python %s/app.py > app_log.log &' % (remote_code_dir) )
+	run('nohup python %s/app.py > %s/app_log.log &' % (remote_code_dir, remote_code_dir), pty=False )
 
 
 # Simple Fab Functions
