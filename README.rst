@@ -18,7 +18,8 @@ Install Fabric, Flask and Boto
 Create an Amazon Web Services Account
 -----------------------------------------
 
-- Go to `Amazon Web Services <http://aws.amazon.com/>`_ and Sign Up
+- Go to `Amazon Web Services <http://aws.amazon.com/>`_ and Sign Up for an account.
+- Currently there is `a Free Tier <http://aws.amazon.com/free/>`_ for new customers for some instance sizes
 - Create a `Default Key Pair <http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/generating-a-keypair.html#how-to-have-aws-create-the-key-pair-for-you>`_
 
 
@@ -41,6 +42,9 @@ Create a Local Settings File that Stores Amazon settings
 
 Deploy the Code to Amazon Server
 ----------------------------------
+
+NOTE: Whenever you deploy instances to Amazon you will be charged the hourly rate per instance type. The below command will start the clock on charges until you Stop or Terminate an instance.
+
 ::
 
         $ fab deploy_web
