@@ -33,6 +33,7 @@ Create a Local Settings File that Stores Amazon settings
 	aws_secret = 'ASklKUYljkja97Kjk+adsasd/adsdssdsds'
 	aws_key_path = '/home/foobar/.ssh/aws_keypair.pem'
 	aws_key_pair = 'my_keypair_name'
+	aws_security_group = 'default'
 
         # Github Value
 	github_user = 'my_github_name'
@@ -55,8 +56,5 @@ Edit variables defined in settings.py AWS global variable to change `Amazon inst
         'defaults' : {
                 'image_id' : 'ami-aecd60c7',       # Amazon Linux 64-bit
                 'instance_type' : 't1.micro',      # Micro Instance
-                'security_groups': ['default'],    # Default Security Group
-                'key_name': aws_key_pair,
-        }
 
 

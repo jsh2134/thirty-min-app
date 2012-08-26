@@ -1,7 +1,8 @@
 import sys
 
 try:
-	from local_settings import aws_key, aws_secret, aws_key_path, aws_key_pair
+	from local_settings import aws_key, aws_secret, aws_key_path
+	from local_settings import aws_key_pair, aws_security_group
 	from local_settings import github_user
 except:
 	print """Error: You need to create a local_settings.py file
@@ -21,7 +22,7 @@ AWS = {
 			'defaults' : {
 					'image_id' : 'ami-aecd60c7',       # Amazon Linux 64-bit
 					'instance_type' : 't1.micro',      # Micro Instance
-					'security_groups': ['default'],    # Default Security Group
+					'security_groups': [aws_security_group], 
 					'key_name': aws_key_pair,
 			}
 }
